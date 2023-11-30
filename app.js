@@ -110,3 +110,29 @@ function navigateGallery(direction) {
 
     images[newIndex].classList.add('active');
 }
+function showProductDetail(productId) {
+    const product = window.productData.find((p) => p.id === productId);
+
+    const productDetailPage = document.createElement('div');
+    productDetailPage.className = 'productDetailPage';
+    productDetailPage.innerHTML = `
+        <h2>${product.title}</h2>
+        <div class="imgGallery" id="imgGallery">
+            ${product.images.map((image, index) => `<img src="${image}" alt="${product.title}" class="galleryImage${index === 0 ? ' active' : ''}">`).join('')}
+        </div>
+        <div class="navigationButtons">
+            <button onclick="navigateGallery(-1)">Swipe Left</button>
+            <button onclick="navigateGallery(1)">Swipe Right</button>
+        </div>
+        <p>Price: $${product.price}</p>
+        <p>Discount: ${product.discount}%</p>
+        <p>Category: ${product.category}</p>
+        <p>Stock: ${product.stock}</p>
+        <button onclick="goBack()">Go Back</button>
+    `;
+
+    document.body.appendChild(productDetailPage);
+
+    document.getElementById('productList').style.display = 'none';
+    document.getElementById('pagination').style.display = 'none';
+}
