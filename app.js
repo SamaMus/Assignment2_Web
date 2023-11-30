@@ -71,3 +71,42 @@ function displayPagination(totalItems, itemsPerPage, currentPage) {
         pagination.appendChild(pageButton);
     }
 }
+
+function handlePageClick(pageNumber) {
+    const productData = window.productData;
+    displayProducts(productData, pageNumber);
+}
+
+function goBack() {
+    // Remove the product detail page from the body
+    const productDetailPage = document.querySelector('.productDetailPage');
+    if (productDetailPage) {
+        document.body.removeChild(productDetailPage);
+    }
+
+    // Show the productList and pagination
+    document.getElementById('productList').style.display = 'block';
+    document.getElementById('pagination').style.display = 'block';
+}
+
+function navigateGallery(direction) {
+    const images = document.querySelectorAll('.galleryImage');
+    let currentIndex = 0;
+
+    images.forEach((image, index) => {
+        if (image.classList.contains('active')) {
+            currentIndex = index;
+            image.classList.remove('active');
+        }
+    });
+
+    let newIndex = currentIndex + direction;
+
+    if (newIndex < 0) {
+        newIndex = images.length - 1;
+    } else if (newIndex >= images.length) {
+        newIndex = 0;
+    }
+
+    images[newIndex].classList.add('active');
+}
