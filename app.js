@@ -33,3 +33,41 @@ function displayProducts(products, currentPage) {
 
     displayPagination(products.length, itemsPerPage, currentPage);
 }
+
+function createProductCard(product) {
+    const productCard = document.createElement('div');
+    productCard.className = 'results';
+    productCard.innerHTML = `
+        <div class="card" onclick="showProductDetail(${product.id})">
+            <div class="imgBox">
+                <img src="${product.thumbnail}" alt="${product.title}" class="mouse" onclick="showProductDetail(${product.id})">
+            </div>
+            <div class="contentBox" onclick="showProductDetail(${product.id})">
+                <h3>${product.title}</h3>
+                <p>Price: $${product.price}</p>
+                <p>Discount: ${product.discount}%</p>
+                <p>Category: ${product.category}</p>
+                <p>Stock: ${product.stock}</p>
+                <a href="#" class="buy">Buy Now</a>
+            </div>
+        </div>
+    `;
+
+    return productCard;
+}
+
+function displayPagination(totalItems, itemsPerPage, currentPage) {
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    const pagination = document.getElementById('pagination');
+    pagination.innerHTML = '';
+
+    for (let i = 1; i <= totalPages; i++) {
+        const pageButton = document.createElement('button');
+        pageButton.textContent = i;
+        pageButton.addEventListener('click', () => handlePageClick(i));
+        if (i === currentPage) {
+            pageButton.classList.add('active'); // Highlight the current page
+        }
+        pagination.appendChild(pageButton);
+    }
+}
