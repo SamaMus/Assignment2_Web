@@ -10,7 +10,6 @@ fetch('https://dummyjson.com/products')
     .then((responseData) => {
         data = responseData.products;
 
-        // Populate categories in the filter dropdown
         populateCategories(data);
 
         const totalProducts = data.length;
@@ -30,4 +29,83 @@ fetch('https://dummyjson.com/products')
         const product = products[i];
         renderProductCard(product);
     }
+};
+
+const renderProductCard = (product) => {
+    const productCard = document.createElement('div');
+    productCard.className = 'card';
+
+    const productImage = document.createElement('img');
+    productImage.src = product.thumbnail;
+    productImage.alt = product.title;
+
+    const cardContent = document.createElement('div');
+    cardContent.className = 'card-content';
+
+    const title = document.createElement('h2');
+    title.textContent = product.title;
+
+    const price = document.createElement('p');
+    price.className = 'price';
+    price.textContent = `Price: ${product.price} Afg`;
+
+    const discount = document.createElement('p');
+    discount.className = 'discount';
+    discount.textContent = `Discount: ${product.discountPercentage}%`;
+
+    const category = document.createElement('p');
+    category.className = 'category';
+    category.textContent = `Category: ${product.category}`;
+
+    const stock = document.createElement('p');
+    stock.className = 'stock';
+    stock.textContent = `In Stock: ${product.stock} units`;
+
+    cardContent.appendChild(title);
+    cardContent.appendChild(price);
+    cardContent.appendChild(discount);
+    cardContent.appendChild(category);
+    cardContent.appendChild(stock);
+
+    productCard.appendChild(productImage);
+    productCard.appendChild(cardContent);
+
+    productCard.addEventListener('click', () => showDetails(product));
+
+    productsContainer.appendChild(productCard);
+};
+const renderPagination = (totalPages) => {
+    paginationContainer.innerHTML = '';
+
+    for (let i = 1; i <= totalPages; i++) {
+        const pageLink = document.createElement('a');
+        pageLink.className = 'page-link';
+        pageLink.textContent = i;
+        pageLink.addEventListener('click', () => renderProducts(i, getCurrentProducts()));
+
+        paginationContainer.appendChild(pageLink);
+    }
+};
+
+const showDetails = (product) => {
+    const detailsPageUrl = `details.html?productId=${product.id}`;
+    window.location.href = detailsPageUrl;
+};
+
+const populateCategories = (products) => {
+    const uniqueCategories = [...new Set(products.map(product => product.category))];
+    const categoryOptions = uniqueCategories.map(category => `<option value="${category}">${category}</option>`);
+    categoryFilter.innerHTML += categoryOptions.join('');
+};
+
+const getCurrentProducts = () => {
+    const selectedCategory = categoryFilter.value;
+    const keyword = searchInput.value.toLowerCase();
+
+    return data.filter(product =>
+        (selectedCategory === '' || product.category === selectedCategory) &&
+        (keyword === '' || product.title.toLowerCase().includes(keyword) ||
+            product.description.toLowerCase().includes(keyword) ||
+            product.category.toLowerCase().includes(keyword))
+    );
 };
