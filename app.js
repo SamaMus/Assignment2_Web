@@ -136,3 +136,18 @@ function showProductDetail(productId) {
     document.getElementById('productList').style.display = 'none';
     document.getElementById('pagination').style.display = 'none';
 }
+
+function populateCategoryFilter(categories) {
+    const categoryFilter = document.getElementById('categoryFilter');
+
+    // Remove existing options
+    categoryFilter.innerHTML = '<option value="">All Categories</option>';
+
+    // Add new options based on available categories
+    categories.forEach(category => {
+        const option = document.createElement('option');
+        option.value = category;
+        option.textContent = category;
+        categoryFilter.appendChild(option);
+    });
+}
