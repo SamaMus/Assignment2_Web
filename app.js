@@ -4,12 +4,12 @@ const searchInput = document.getElementById('searchInput');
 const categoryFilter = document.getElementById('categoryFilter');
 const productsPerPage = 6;
 let data;
-
+//fetch products when the page loads
 fetch('https://dummyjson.com/products')
     .then((response) => response.json())
     .then((responseData) => {
         data = responseData.products;
-
+//populate categories when the page loads
         populateCategories(data);
 
         const totalProducts = data.length;
@@ -19,6 +19,7 @@ fetch('https://dummyjson.com/products')
         renderPagination(totalPages);
     });
 
+//rendering products based on the opened page
     const renderProducts = (page, products) => {
     productsContainer.innerHTML = '';
 
@@ -31,6 +32,7 @@ fetch('https://dummyjson.com/products')
     }
 };
 
+//rendering a product card
 const renderProductCard = (product) => {
     const productCard = document.createElement('div');
     productCard.className = 'card';
@@ -74,6 +76,8 @@ const renderProductCard = (product) => {
 
     productsContainer.appendChild(productCard);
 };
+
+//rendering pagination links
 const renderPagination = (totalPages) => {
     paginationContainer.innerHTML = '';
 
@@ -87,6 +91,7 @@ const renderPagination = (totalPages) => {
     }
 };
 
+//details of products
 const showDetails = (product) => {
     const detailsPageUrl = `details.html?productId=${product.id}`;
     window.location.href = detailsPageUrl;
@@ -116,6 +121,8 @@ const searchProducts = () => {
     renderProducts(1, filteredProducts);
     renderPagination(Math.ceil(filteredProducts.length / productsPerPage));
 };
+
+//get the current products based on the search and filter criteria
 const getCurrentProducts = () => {
     const selectedCategory = categoryFilter.value;
     const keyword = searchInput.value.toLowerCase();
