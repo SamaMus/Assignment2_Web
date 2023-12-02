@@ -54,5 +54,27 @@ const renderProductDetails = (product) => {
     rating.className = 'rating';
     rating.textContent = `Rating: ${product.rating}/5`;
 
-    
+    detailsContent.appendChild(title);
+    detailsContent.appendChild(description);
+    detailsContent.appendChild(price);
+    detailsContent.appendChild(discount);
+    detailsContent.appendChild(stock);
+    detailsContent.appendChild(rating);
+
+    const gallery = document.createElement('div');
+    gallery.className = 'gallery';
+
+    product.images.forEach(image => {
+        const galleryImage = document.createElement('img');
+        galleryImage.src = image;
+        galleryImage.alt = product.title;
+        galleryImage.addEventListener('click', () => showImageDetails(image));
+        gallery.appendChild(galleryImage);
+    });
+
+    detailsCard.appendChild(detailsImage);
+    detailsCard.appendChild(detailsContent);
+    detailsCard.appendChild(gallery);
+
+    detailsContainer.appendChild(detailsCard);
 };
