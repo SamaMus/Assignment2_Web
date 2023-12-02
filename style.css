@@ -2,15 +2,16 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #445a92
+    background-color: #445a92;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(33, 92, 131);
-    padding: 10px 20px;
+    background: linear-gradient(to right, #215c83, #628aee);
+    padding: 15px 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .container {
@@ -21,7 +22,7 @@ header {
 }
 
 .card {
-    background-color:rgb(98, 138, 238);
+    background-color: #628aee;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -46,39 +47,41 @@ header {
 .card-content {
     padding: 20px;
 }
+
 h1 {
     color: #fff;
 }
+
 h2 {
     margin: 0;
     font-size: 1.5rem;
-    color: #000000;
+    color: #001f3f;
 }
 
 h3 {
     margin: 10px 0;
     font-size: 1.2rem;
-    color: #666666;
+    color: #004080;
 }
 
 p {
     font-size: 1rem;
-    color: #888;
+    color: #0066cc;
 }
 
 .price {
-    color: #3b3533;
+    color: #022b54;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .discount {
-    color: #e44d26;
+    color: #022b54;
     margin-bottom: 10px;
 }
 
 .stock {
-    color: #010701;
+    color: #022b54;
     margin-bottom: 10px;
 }
 
@@ -107,11 +110,10 @@ p {
     background-color: #1b201c;
 }
 
-
 .details-container {
     max-width: 800px;
     margin: 20px auto;
-    background-color: rgb(33, 92, 131);
+    background-color: #215c83;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -130,14 +132,14 @@ p {
 
 .details-content {
     text-align: left;
-    background-color:#6587de;
+    background-color: #6587de;
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 20px;
 }
 
 .details-content h2 {
-    color: #000000;
+    color: #001f3f;
     margin-bottom: 10px;
 }
 
@@ -147,7 +149,7 @@ p {
 }
 
 .details-content p {
-    color: #fffefe;
+    color: #fff;
     margin: 5px 0;
 }
 
@@ -155,7 +157,6 @@ p {
     display: flex;
     gap: 10px;
     overflow-x: auto;
-
 }
 
 .gallery img {
@@ -169,7 +170,7 @@ p {
 
 .gallery img:hover {
     transform: scale(1.1);
-    border: 2px solid rgb(0, 247, 255);
+    border: 2px solid #00f7ff;
 }
 
 .search-container {
@@ -183,16 +184,19 @@ p {
     border: none;
     border-radius: 4px;
     font-size: 16px;
+    background-color: #215c83;
+    color: #fff;
 }
 
 #searchInput:focus {
     outline: none;
     border: 2px solid #85a2ed;
 }
+
 #searchButton {
     padding: 10px 15px;
     background-color: #101110;
-    color:#6587de;
+    color: #6587de;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -211,12 +215,15 @@ label {
     margin-right: 8px;
     color: #333;
 }
+
 #categoryFilter {
     padding: 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    background-color: #215c83;
+    color: #fff;
 }
 
 #categoryFilter:focus {
@@ -240,4 +247,3 @@ label {
     cursor: pointer;
     font-size: 16px;
 }
-
