@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #6587de
+    background-color: #445a92
 }
 
 header {
@@ -21,7 +21,7 @@ header {
 }
 
 .card {
-    background-color: white;
+    background-color:rgb(98, 138, 238);
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -40,23 +40,25 @@ header {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ca2222;
 }
 
 .card-content {
     padding: 20px;
 }
-
+h1 {
+    color: #fff;
+}
 h2 {
     margin: 0;
     font-size: 1.5rem;
-    color: #333;
+    color: #000000;
 }
 
 h3 {
     margin: 10px 0;
     font-size: 1.2rem;
-    color: #666;
+    color: #666666;
 }
 
 p {
@@ -65,7 +67,7 @@ p {
 }
 
 .price {
-    color: #e44d26;
+    color: #3b3533;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -91,7 +93,7 @@ p {
 }
 
 .page-link {
-    padding: 10px;
+    padding: 10px 15px;
     margin: 0 5px;
     background-color: #4c7daf;
     color: white;
@@ -109,7 +111,7 @@ p {
 .details-container {
     max-width: 800px;
     margin: 20px auto;
-    background-color: #fff;
+    background-color: rgb(33, 92, 131);
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -128,24 +130,24 @@ p {
 
 .details-content {
     text-align: left;
-    background-color: #f9f9f9;
+    background-color:#6587de;
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 20px;
 }
 
 .details-content h2 {
-    color: #333;
+    color: #000000;
     margin-bottom: 10px;
 }
 
 .details-content h3 {
-    color: #666;
+    color: #222222;
     margin-bottom: 15px;
 }
 
 .details-content p {
-    color: #888;
+    color: #fffefe;
     margin: 5px 0;
 }
 
@@ -162,10 +164,80 @@ p {
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
-    border: 2px solid #fff;
+    border: 2px solid #3a0792;
 }
 
 .gallery img:hover {
     transform: scale(1.1);
-    border: 2px solid yellow;
+    border: 2px solid rgb(0, 247, 255);
 }
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+#searchInput {
+    padding: 10px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#searchInput:focus {
+    outline: none;
+    border: 2px solid #85a2ed;
+}
+#searchButton {
+    padding: 10px 15px;
+    background-color: #101110;
+    color:#6587de;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    background-color: #4571a0;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+}
+
+label {
+    margin-right: 8px;
+    color: #333;
+}
+#categoryFilter {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#categoryFilter:focus {
+    outline: none;
+    border: 2px solid #85a2ed;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page-link {
+    padding: 10px 15px;
+    margin: 0 4px;
+    background-color: #090b09;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
