@@ -6,10 +6,11 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: white;
-    padding: 1em;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(33, 92, 131);
+    padding: 10px 20px;
 }
 
 .container {
@@ -89,10 +90,82 @@ p {
     margin-top: 20px;
 }
 
-.page-link:hover {
-    background-color: #45a049;
+.page-link {
+    padding: 10px;
+    margin: 0 5px;
+    background-color: #4c7daf;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.page-link.active {
-    background-color: #45a049;
+.page-link:hover {
+    background-color: #1b201c;
+}
+
+
+.details-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.details-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.details-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.details-content {
+    text-align: left;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.details-content h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.details-content h3 {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.details-content p {
+    color: #888;
+    margin: 5px 0;
+}
+
+.gallery {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+
+}
+
+.gallery img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    border: 2px solid #fff;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    border: 2px solid yellow;
 }
