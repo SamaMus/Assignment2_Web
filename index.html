@@ -3,28 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Product Page </title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Awesome Product Page</title>
 </head>
 <body>
     <header>
-        <h1>Products Page by Sama</h1>
-
+        <h1>Awesome Product Page</h1>
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Search...">
             <button onclick="searchProducts()">Search</button>
         </div>
-
         <div class="filter-container">
             <label for="categoryFilter">Filter by Category:</label>
             <select id="categoryFilter" onchange="filterProductsByCategory()">
-                <option value="">Categories</option>
+                <option value="">All Categories</option>
             </select>
         </div>
     </header>
 
     <div class="container" id="products-container"></div>
     <div class="pagination" id="pagination"></div>
-    <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
