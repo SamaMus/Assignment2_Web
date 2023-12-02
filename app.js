@@ -105,6 +105,17 @@ const filterProductsByCategory = () => {
     renderPagination(Math.ceil(filteredProducts.length / productsPerPage));
 };
 
+//searching products based on the entered keyword
+const searchProducts = () => {
+    const keyword = searchInput.value.toLowerCase();
+    const filteredProducts = data.filter(product =>
+        product.title.toLowerCase().includes(keyword) ||
+        product.description.toLowerCase().includes(keyword) ||
+        product.category.toLowerCase().includes(keyword)
+    );
+    renderProducts(1, filteredProducts);
+    renderPagination(Math.ceil(filteredProducts.length / productsPerPage));
+};
 const getCurrentProducts = () => {
     const selectedCategory = categoryFilter.value;
     const keyword = searchInput.value.toLowerCase();
