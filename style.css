@@ -88,3 +88,11 @@ p {
     justify-content: center;
     margin-top: 20px;
 }
+
+.page-link:hover {
+    background-color: #45a049;
+}
+
+.page-link.active {
+    background-color: #45a049;
+}
