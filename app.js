@@ -97,6 +97,13 @@ const populateCategories = (products) => {
     const categoryOptions = uniqueCategories.map(category => `<option value="${category}">${category}</option>`);
     categoryFilter.innerHTML += categoryOptions.join('');
 };
+//filter products based on the selected category
+const filterProductsByCategory = () => {
+    const selectedCategory = categoryFilter.value;
+    const filteredProducts = data.filter(product => selectedCategory === '' || product.category === selectedCategory);
+    renderProducts(1, filteredProducts);
+    renderPagination(Math.ceil(filteredProducts.length / productsPerPage));
+};
 
 const getCurrentProducts = () => {
     const selectedCategory = categoryFilter.value;
