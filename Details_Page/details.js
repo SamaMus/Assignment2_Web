@@ -78,3 +78,8 @@ const renderProductDetails = (product) => {
 
     detailsContainer.appendChild(detailsCard);
 };
+
+const showImageDetails = (image) => {
+    const imageDetailsContainer = window.open('', '_blank');
+    imageDetailsContainer.document.write(`<html><head><title>Image Details</title></head><body style="margin: 0; padding: 0; background-color: #f7f7f7;"><img src="${image}" alt="Image"></body></html>`);
+};
