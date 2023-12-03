@@ -22,7 +22,10 @@ In this website you can see products and their details such as price, category,d
 3. **Open file in Visual Studio:**
 
 4. **To run the project use these commands**
-
+   npm install -g http-server
+   http-server
+5. **Another Option to run**
+      in visual studio on the bottom there is "Go Live" button, by clicking that you can see the website
 
 ## Structure of Folder
 - **index.html:** Main HTML file for the product   page.
@@ -30,21 +33,14 @@ In this website you can see products and their details such as price, category,d
 - **styles.css:** Cascading Style Sheets (CSS) for styling the web pages both for index.html and details.html.
 - **app.js:** JavaScript file containing the logic for fetching and rendering product data.
 
-5. **Explore the Product Page:**
+5. **The Product Page:**
    - Browse through the list of products.
-   - Use the pagination controls to navigate through multiple pages.
-   - Filter products by selecting a category.
-   - Use the search bar to find products based on keywords.
+   - On the bottom of the home page you can use the pagination controls  to navigate through multiple pages.
+   - By selecting a category you can filter products .
+   - On the top of the page you can use the search bar to find products based on selected keywords.
 
 5. **Click on a Product:**
-   - Click on any product to view detailed information and a gallery of product images.
+   - You can click on any product to view detailed information and a gallery of product images.
 
-
-
-## Technologies Used
-
-- HTML
-- CSS
-- JavaScript
 
 
