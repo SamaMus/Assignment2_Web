@@ -1,3 +1,4 @@
+//references to HTML elements
 const productsContainer = document.getElementById('products-container');
 const paginationContainer = document.getElementById('pagination');
 const searchInput = document.getElementById('searchInput');
