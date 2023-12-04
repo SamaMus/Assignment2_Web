@@ -3,7 +3,7 @@ const productsContainer = document.getElementById('products-container');
 const paginationContainer = document.getElementById('pagination');
 const searchInput = document.getElementById('searchInput');
 const categoryFilter = document.getElementById('categoryFilter');
-const productsPerPage = 6;
+const productsPerPage = 10;
 let data;
 //fetch products when the page loads
 fetch('https://dummyjson.com/products')
@@ -113,16 +113,19 @@ const filterProductsByCategory = () => {
 
 //searching products based on the entered keyword
 const searchProducts = () => {
-    const keyword = searchInput.value.toLowerCase();
+    const keyword = searchInput.value.toLowerCase().trim();
+    const selectedCategory = categoryFilter.value.toLowerCase();
+
     const filteredProducts = data.filter(product =>
-        product.title.toLowerCase().includes(keyword) ||
-        product.description.toLowerCase().includes(keyword) ||
-        product.category.toLowerCase().includes(keyword)
+        (selectedCategory === '' || product.category.toLowerCase() === selectedCategory) &&
+        (keyword === '' || product.title.toLowerCase().startsWith(keyword) ||
+            product.description.toLowerCase().includes(keyword) ||
+            product.category.toLowerCase().includes(keyword))
     );
+
     renderProducts(1, filteredProducts);
     renderPagination(Math.ceil(filteredProducts.length / productsPerPage));
 };
-
 //get the current products based on the search and filter criteria
 const getCurrentProducts = () => {
     const selectedCategory = categoryFilter.value;
@@ -135,3 +138,6 @@ const getCurrentProducts = () => {
             product.category.toLowerCase().includes(keyword))
     );
 };
+
+//HER PAGE'DE 10 PRODUCTS OLMALIDI
+// KEYWORD YAZANDA CATEGORY SECMEK SHOULD WORK OR VICE VERSA
