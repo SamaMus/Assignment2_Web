@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const productId = params.get('productId');
 
     // Based on the product ID we can fetch product details 
-    fetch('https://dummyjson.com/products')
+fetch('https://dummyjson.com/products?limit=100')
         .then(response => response.json())
         .then(data => {
             const product = data.products.find(p => p.id == productId);

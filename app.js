@@ -6,11 +6,10 @@ const categoryFilter = document.getElementById('categoryFilter');
 const productsPerPage = 10;
 let data;
 //fetch products when the page loads
-fetch('https://dummyjson.com/products')
-    .then((response) => response.json())
-    .then((responseData) => {
+fetch('https://dummyjson.com/products?limit=100')
+    .then(response => response.json())
+    .then(responseData => {
         data = responseData.products;
-//populate categories when the page loads
         populateCategories(data);
 
         const totalProducts = data.length;
